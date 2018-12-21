@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-public class App
+public class NodeUtil
 {
     private final static String space = " ";
     private final static String forwardSlash = "/";
