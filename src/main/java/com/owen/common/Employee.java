@@ -2,7 +2,7 @@ package com.owen.common;
 
 import java.io.Serializable;
 
-public class Employee implements Serializable
+public class Employee implements Serializable, Cloneable
 {
     private static final long serialVersionID = 6849794470754667710L;
 
@@ -13,6 +13,12 @@ public class Employee implements Serializable
     private long empID;
     private String deptID;
     private transient String description;
+
+    public Employee(){}
+    public Employee(String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public String getFirstName()
     {
@@ -114,5 +120,10 @@ public class Employee implements Serializable
         sb.append(", description='").append(description).append('\'');
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
