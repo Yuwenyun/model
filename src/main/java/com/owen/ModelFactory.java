@@ -1,6 +1,7 @@
 package com.owen;
 
 import com.owen.algorithm.ListNode;
+import com.owen.algorithm.PTreeNode;
 import com.owen.algorithm.TreeNode;
 import com.owen.common.Employee;
 
@@ -130,6 +131,31 @@ public class ModelFactory
         node4.setLeft(node8); node4.setRight(node9);
         node5.setLeft(node10);
 
+        return root;
+    }
+
+    public static PTreeNode<Integer> getPTree()
+    {
+        PTreeNode<Integer> root = new PTreeNode<>(3);
+        PTreeNode<Integer> node1 = new PTreeNode<>(1);
+        PTreeNode<Integer> node2 = new PTreeNode<>(9);
+        PTreeNode<Integer> node3 = new PTreeNode<>(6);
+        PTreeNode<Integer> node4 = new PTreeNode<>(8);
+        PTreeNode<Integer> node5 = new PTreeNode<>(2);
+        PTreeNode<Integer> node6 = new PTreeNode<>(5);
+        PTreeNode<Integer> node7 = new PTreeNode<>(4);
+        PTreeNode<Integer> node8 = new PTreeNode<>(0);
+        PTreeNode<Integer> node9 = new PTreeNode<>(7);
+        root.setLeft(node1); root.setRight(node2);
+        node1.setLeft(node3); node1.setRight(node4); node1.setParent(root);
+        node2.setLeft(node5); node2.setRight(node6); node2.setParent(root);
+        node3.setLeft(node7); node3.setParent(node1);
+        node4.setLeft(node8); node4.setRight(node9); node4.setParent(node1);
+        node5.setParent(node2);
+        node6.setParent(node2);
+        node7.setParent(node3);
+        node8.setParent(node4);
+        node9.setParent(node4);
         return root;
     }
 }

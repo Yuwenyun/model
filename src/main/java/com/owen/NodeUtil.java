@@ -14,9 +14,27 @@ public class NodeUtil
     private final static String forwardSlash = "/";
     private final static String backwardSlash = "\\";
 
-    public static void main( String[] args )
+    public static <T> TreeNode getTreeNode(TreeNode<T> root, T value)
     {
-        System.out.println( "Hello World!" );
+        if(root == null || value == null){
+            return null;
+        }
+        if(value.equals(root.getValue())){
+            return root;
+        }
+        TreeNode<T> result = getTreeNode(root.getLeft(), value);
+        return result != null ? result : getTreeNode(root.getRight(), value);
+    }
+
+    public static <T> TreeNode getLeftMostChild(TreeNode<T> root)
+    {
+        if(root == null){
+            return null;
+        }
+        if(root.getLeft() == null){
+            return root;
+        }
+        return getLeftMostChild(root.getLeft());
     }
 
     public static <T> void printList(ListNode<T> root)
