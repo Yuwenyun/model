@@ -2,7 +2,7 @@ package com.owen.common;
 
 import java.util.List;
 
-public class Manager extends Employee
+public class Manager extends Employee implements Person
 {
     private List<Employee> emps;
 
@@ -23,5 +23,10 @@ public class Manager extends Employee
         sb.append("emps=").append(emps);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public String talk() {
+        return this.emps == null || this.emps.size() == 0 ? "I'm not manager" : "I'm a manager";
     }
 }
