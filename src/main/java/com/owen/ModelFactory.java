@@ -6,10 +6,18 @@ import com.owen.algorithm.TreeNode;
 import com.owen.common.Employee;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ModelFactory
 {
+    public static final String MAP_KEY_1 = "key_1";
+    public static final String MAP_KEY_2 = "key_2";
+    public static final String MAP_KEY_3 = "key_3";
+    public static final String MAP_KEY_4 = "key_4";
+    public static final String MAP_KEY_5 = "key_5";
+
     public static Employee getEmploye(){
         Employee employee = new Employee();
         employee.setFirstName("Owen");
@@ -157,5 +165,16 @@ public class ModelFactory
         node8.setParent(node4);
         node9.setParent(node4);
         return root;
+    }
+
+    public static Map<String, String> getStringKeyedMap()
+    {
+        Map<String, String> demoMap = new HashMap<>();
+        demoMap.put(MAP_KEY_1, MAP_KEY_1);
+        demoMap.put(MAP_KEY_2, MAP_KEY_2);
+        demoMap.put(MAP_KEY_3, MAP_KEY_3);
+        demoMap.put(MAP_KEY_4, MAP_KEY_4);
+        demoMap.put(MAP_KEY_5, MAP_KEY_5);
+        return demoMap;
     }
 }
